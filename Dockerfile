@@ -16,7 +16,8 @@ RUN \
   cd /ghost && \
   npm install --production && \
   sed 's/127.0.0.1/0.0.0.0/' /ghost/config.example.js > /ghost/config.js && \
-  useradd ghost --home /ghost
+  useradd ghost --home /ghost && \
+  apt-get install -y sendmail
 
 # Add files.
 ADD start.bash /ghost-start
